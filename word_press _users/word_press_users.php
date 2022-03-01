@@ -12,7 +12,9 @@ Text Domain:   test
 Domain Path:  /languages
 */
 
-
+/*
+ Adding plugin admin side
+ */
 add_action('admin_menu', 'test_plugin_setup_menu');
 
 function test_plugin_setup_menu()
@@ -51,6 +53,9 @@ function test_plugin_setup_menu()
     }
 }
 
+/*
+  Adding plugin fronted side
+ */
 function users_table()
 {
     echo "<h2>";
@@ -133,6 +138,10 @@ function users_table()
         }
     }
     </script>";
+
+        /*
+         Check if preview number field is empty
+         */
         if (empty($prev_num)) {
             foreach (array_slice($all_users, 0, 1000000) as $user) {
                 echo '<tr>';
@@ -162,11 +171,19 @@ function users_table()
 
 }
 
+/*
+ Adding shortcode
+ */
 add_shortcode('users_table_preview', 'users_table');
 
-function add_my_css(){
-    wp_enqueue_style( 'your-stylesheet-name', plugins_url('/css/new-style.css', __FILE__), false, '1.0.0', 'all');
+/*
+ Adding style
+ */
+function add_my_css()
+{
+    wp_enqueue_style('your-stylesheet-name', plugins_url('/css/new-style.css', __FILE__), false, '1.0.0', 'all');
 }
+
 add_action('wp_enqueue_scripts', "add_my_css");
 
 
