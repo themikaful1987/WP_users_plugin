@@ -1,0 +1,20 @@
+#myTable {
+    color:#4d4d4d;
+    box-shadow: 5px 5px 9px 3px #808080;
+}
+
+#myTable  tbody td {
+    background-color: #4d4d4d !important;
+    color: black;
+    vertical-align: inherit;
+}
+
+#myTable tbody tr:nth-child(2n) td {
+    background-color: white !important;
+}
+
+@media only screen and (max-width: 600px)  {
+    .custom_table{
+        overflow-x: auto;
+    }
+}
